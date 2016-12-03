@@ -2,6 +2,16 @@ CORRELON
 PROYECTO DE PROGRAMACION ORIENTADA A OBJETOS
 VERSION 120320161700
 
+==================================================
+
+ACTUALIZACIONES:
+
+03/12/16: Se creo la clase ScrollWorld con scroll funcional. El scroll se ha guardado en una funcion para probarlo manualmente. Se continuara con las clases de personaje y objetos en ese orden a fin de crear la base para otras entidades.
+
+==================================================
+
+DESCRIPCION:
+
 El jugador es un corredor especial que no puede detenerse. Por esto, se le han puesto obstaculos para probar si es cierto que no se podra detener...
 
 El jugador solo se mueve hacia adelante, sin embargo puede saltar y bajar de algunas plataformas. El jugador cuenta con tres puntos de golpe, si el jugador se queda sin puntos de golpe el juego termina. El juego registra la distancia maxima alcanzada y el tiempo que tomo en llegar.
