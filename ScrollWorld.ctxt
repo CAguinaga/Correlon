@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ScrollWorld
+comment0.text=\r\n\ Clase\ que\ genera\ el\ mundo\ del\ juego\ y\ que\ guarda\ los\ metodos\ necesarios\ para\ realizar\ scrolling.\r\n\ Esta\ clase\ inicializa\ las\ variables\ necesarias\ para\ el\ efecto\ de\ scroll\ usando\ una\ clase\ donde\r\n\ existe\ un\ mapa\ ya\ dibujado\ (clase\ MundoMapa)\ y\ la\ clase\ de\ los\ bloques\ que\ conforman\ las\ plataformas.\r\n\ \r\n\ @author\:\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\ \r\n\ @version\:\ 031220161700\r\n
+comment1.params=
+comment1.target=ScrollWorld()
+comment1.text=\r\n\ Constructor\ para\ objectos\ de\ la\ clase\ ScrollWorld.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ creaMapa()
+comment2.text=\r\n\ M\u00E9todo\ que\ "lee"\ la\ imagen\ del\ mapa\ y\ lo\ genera.\ Guarda\ los\ bloques\ en\ una\ lista\ de\ arreglos\r\n\ \r\n
+comment3.params=
+comment3.target=void\ dibujaObjetos()
+comment3.text=\r\n\ Metodo\ que\ genera\ los\ bloques\ del\ juego,\ usando\ las\ listas\ generadas\r\n\ por\ el\ metodo\ creaMapa\r\n\ \r\n
+comment4.params=cambioX\ cambioY
+comment4.target=void\ scrolling(int,\ int)
+comment4.text=\r\n\ Metodo\ que\ verifica\ la\ posicion\ general\ de\ los\ objetos\ en\ pantalla\ y\ mantiene\r\n\ el\ foco\ en\ la\ misma\r\n
+numComments=5
