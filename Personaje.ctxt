@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Personaje
-comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ jugador\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120320161957\r\n
+comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ jugador\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120420160021\r\n
 comment1.params=mundo
 comment1.target=void\ addedToWorld(greenfoot.World)
 comment2.params=

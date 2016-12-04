@@ -50,6 +50,7 @@ public class ScrollWorld extends World
     int pArr = MAPAALTO - getHeight();//0; //MAPAALTO - getHeight();
     int pAb = MAPAALTO; //getHeight(); //MAPAALTO;
     
+    //Inicializa al jugador
     Personaje jugador= new Personaje();
     //////////////////////////////////////////////////////////////////
     /**
@@ -59,7 +60,9 @@ public class ScrollWorld extends World
     public ScrollWorld()
     {    
         //Crea un escenario de alto y ancho, con numero de celdas
-        super(600, 400, 1);
+        //el false permite a los actores existir fuera de la pantalla
+        super(600, 400, 1, false);
+        
         /*
         //genera la imagen del escenario a medida
         GreenfootImage img = new GreenfootImage(600,400);
@@ -69,7 +72,9 @@ public class ScrollWorld extends World
        creaMapa();
        dibujaObjetos();
        
-       addObject( jugador, getWidth()/2, getHeight() - jugador.piso );
+       //coloca al jugador
+       addObject( jugador, 50, 190 );
+       //addObject( jugador, getWidth()/2, getHeight()/2 - jugador.getImage().getHeight()/2 );
     }
     
     /**
@@ -125,8 +130,11 @@ public class ScrollWorld extends World
             miPlataformaY = miPlataforma.coordY;
             
             //comprobamos que las coordenadas esten en pantalla comparando las coordenadas de la plataforma con las coordenadas de la pantalla
-            if( miPlataformaX >= pIzq && miPlataformaX <= pDer && miPlataformaY >= pArr && miPlataformaY <= pAb ){
-                   
+            if( miPlataformaX + BASEANCHO >= pIzq && 
+                miPlataformaX - BASEANCHO <= pDer && 
+                miPlataformaY + BASEALTO >= pArr && 
+                miPlataformaY - BASEALTO <= pAb )
+            {
                    //"mueve" las plataformas
                    pantallaX = miPlataformaX - pIzq;
                    pantallaY = miPlataformaY - pArr;
@@ -169,11 +177,11 @@ public class ScrollWorld extends World
             pIzq = 0;
             pDer = getWidth();
         }
-        else if( pDer >= MAPAANCHO ){
+        else if( pDer >= MUNDOANCHO ){
             
             //reinicializa si se va mucho a la derecha
-            pDer = MAPAANCHO;
-            pIzq = MAPAANCHO - getWidth();
+            pDer = MUNDOANCHO;
+            pIzq = MUNDOANCHO - getWidth();
         }
         
         pArr -= cambioY;
@@ -185,11 +193,11 @@ public class ScrollWorld extends World
             pArr = 0;
             pAb = getHeight();
         }
-        else if( pAb >= MAPAALTO ){
+        else if( pAb >= MUNDOALTO ){
             
             //reinicializa si se va mucho hacia abajo
-            pAb = MAPAANCHO;
-            pArr = MAPAALTO - getHeight();
+            pAb = MUNDOALTO;
+            pArr = MUNDOALTO - getHeight();
         }
         
         //actualiza el mapa y hace "scroll"

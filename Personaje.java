@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Clase que crea la entidad del jugador en el mundo
  * 
  * @author Carlos Antonio Aguiñaga Camacho
- * @version 120320161957
+ * @version 120420160021
  */
 public class Personaje extends Actor
 {
@@ -12,10 +12,10 @@ public class Personaje extends Actor
     boolean cae = false;
     
     //determina la altura del piso respecto a nuestro personaje
-    int piso = getImage().getHeight()/2;
+    int medidaPiso = getImage().getHeight()/2;
     
     //determina la distancia de una pared
-    int lado = getImage().getWidth()/2;
+    int medidaLado = getImage().getWidth()/2;
     
     //valor de fuerza
     int grav = 0;
@@ -26,7 +26,7 @@ public class Personaje extends Actor
     int mundoAlto;
     int mundoAncho;
     
-    //asigna los valores del mundo a nuestro personaje
+    //asigna los valores del mundo a nuestro personaje cuando se agrega al mundo
     public void addedToWorld(World mundo){
         miMundillo = mundo;
         mundoAlto = miMundillo.getHeight();
@@ -44,26 +44,30 @@ public class Personaje extends Actor
             gravedad();
         }
         else{
+            /*
             //verifica las teclas que se esten presionando para mover al personaje en esa direccion. El mundo se recorre con el scroll
             if( Greenfoot.isKeyDown("left") ){
                 //mueve al personaje
-                vel = -5;
+                vel = -8;
             }
-        
-            if( Greenfoot.isKeyDown("right") ){
+            else if( Greenfoot.isKeyDown("right") ){
                 //mueve al personaje
-                vel = +5;
+                vel = +8;
             }
-            
+           
             //si no se presionan las teclas el personaje no se mueve
             else{
-                vel=0; 
+                vel = 0; 
             }
-            
+            */
+           
             //si se presiona espacio el personaje saltara
             if( Greenfoot.isKeyDown("space") ){
-                grav += 8;
+                grav += 10;
             }
+            
+            //movimiento perpetuo hacia adelante
+            vel = 8;
         }
         
         //gravedad();
@@ -81,19 +85,23 @@ public class Personaje extends Actor
         int nY = getY() - grav;
         
         //crea un actor para plataforma abajo
-        Actor platAb = getOneObjectAtOffset(0, piso + 5, Plataforma.class);
+        Actor platAb = getOneObjectAtOffset(0, medidaPiso + 5, Plataforma.class);
         
         //crea un actor para plataforma arriba
-        Actor platArr = getOneObjectAtOffset(0, -piso - 5, Plataforma.class);
+        Actor platArr = getOneObjectAtOffset(0, -medidaPiso - 5, Plataforma.class);
         
-        //crea un actor para plataforma lados
-        Actor platLad = getOneObjectAtOffset(lado + 5, 0, Plataforma.class);
+        //crea un actor para plataforma derecha
+        Actor platDer = getOneObjectAtOffset(medidaLado + 5, 0, Plataforma.class);
+        
+        //crea un actor para plataforma izquierda
+        Actor platIzq = getOneObjectAtOffset( -( medidaLado - 5 ), 0, Plataforma.class);
         
         //detecta colision. Si toca la plataforma, deja de caer. Si no es asi, continua cayendo
         if( platAb != null){
            
-            //reinicia la gravedad y la bandera de caida
-            if (grav < 0 ){
+            if ( grav < 0 ){
+                
+                //reinicia la gravedad y la bandera de caida
                 grav = 0;
                 cae = false;
                 
@@ -102,12 +110,12 @@ public class Personaje extends Actor
                 
                 //correccion para simular tocar el suelo
                 int encima = platAb.getY() - imgPlat.getHeight()/2;
-                nY = encima - piso;
+                nY = encima - medidaPiso;
             }
         }
         
         //se asegura de no pasar del fondo de la pantalla
-        else if( getY() >= mundoAlto - piso ){
+        else if( getY() >= mundoAlto - medidaPiso ){
             if( grav < 0 ){
                 
                 //reinicializa las variables
@@ -115,7 +123,7 @@ public class Personaje extends Actor
                 cae=false;
                 
                 //correccion de posicion
-                nY = mundoAlto - piso;
+                nY = mundoAlto - medidaPiso;
             }
         }
         else{
@@ -137,17 +145,28 @@ public class Personaje extends Actor
                 int abajo = platArr.getY() + imgPlatArr.getHeight()/2;
                 
                 //se usa "lado" por el modo en que funciona Greenfoot
-                nY = abajo + lado;
+                nY = abajo + medidaLado;
             }
         }
         
-        //Comprueba si hay plataformas enfrente
-        if( platLad != null){
-           
-            //detiene al objeto
-            vel=0;
-            
-            //rebote vel = Math.abs(vel) (depende de lado: *-1)
+        //Evitamos que pase del borde izquierdo
+        if( getX() <= medidaLado ){
+            vel = Math.abs(vel);
+        }
+        
+        //Evitamos que pase del borde derecho
+        if( getX() >= mundoAncho - medidaLado ){
+            vel = Math.abs(vel) * -1;
+        }
+        
+        //Comprueba si hay plataformas a la derecha
+        if( platDer != null){
+            vel = Math.abs(vel) * -1;
+        }
+                
+        //Comprueba si hay plataformas a la izquierda
+        if( platIzq != null){
+            vel = Math.abs(vel);
         }
         
         //llama al movimiento con scroll con la fuerza aplicada
@@ -174,7 +193,8 @@ public class Personaje extends Actor
         //comprueba las posiciones en y y en x para realizar el scroll
         
         //si se encuentra a cierta distancia en el eje y, hace scroll. De lo contrario, la pantalla se queda estatica
-        if( nuevaY < 200 && miMundo.pArr > 0 || nuevaY > mundoAlto - 200 && miMundo.pAb < miMundo.MUNDOALTO){
+        if( ( nuevaY < 200 && miMundo.pArr > 0 ) || 
+            ( nuevaY > mundoAlto - 200 && miMundo.pAb < miMundo.MUNDOALTO) ){
             
         //definen que tanto se mueve la pantalla
         int scrollY = nuevaY - getY();
@@ -188,7 +208,8 @@ public class Personaje extends Actor
         }
 
         //si se encuentra a cierta distancia en el eje x, hace scroll. De lo contrario, la pantalla se queda estatica
-       if( nuevaX < 200 && miMundo.pIzq > 0 || nuevaX > mundoAncho - 200 && miMundo.pDer < miMundo.MUNDOANCHO){
+       if( ( nuevaX < 200 && miMundo.pIzq > 0 ) || 
+           ( nuevaX > mundoAncho - 300 && miMundo.pDer < miMundo.MUNDOANCHO ) ){
             
         //definen que tanto se mueve la pantalla
         //int scrollY = nuevaY - getY();
