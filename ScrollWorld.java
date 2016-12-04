@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * existe un mapa ya dibujado (clase MundoMapa) y la clase de los bloques que conforman las plataformas.
  * 
  * @author: Carlos Antonio Aguiñaga Camacho 
- * @version: 031220161700
+ * @version: 031220161957
  */
 public class ScrollWorld extends World
 {
@@ -47,9 +47,10 @@ public class ScrollWorld extends World
     //define la posicion de la pantalla respecto al mapa (izquierda, derecha, arriba, abajo)
     int pIzq = 0;
     int pDer = getWidth(); //obtiene el ancho de pantalla
-    int pArr = MAPAALTO - getHeight();
-    int pAb = MAPAALTO;
+    int pArr = MAPAALTO - getHeight();//0; //MAPAALTO - getHeight();
+    int pAb = MAPAALTO; //getHeight(); //MAPAALTO;
     
+    Personaje jugador= new Personaje();
     //////////////////////////////////////////////////////////////////
     /**
      * Constructor para objectos de la clase ScrollWorld.
@@ -67,6 +68,8 @@ public class ScrollWorld extends World
        
        creaMapa();
        dibujaObjetos();
+       
+       addObject( jugador, getWidth()/2, getHeight() - jugador.piso );
     }
     
     /**
@@ -76,10 +79,10 @@ public class ScrollWorld extends World
     public void creaMapa(){
         
         //recorre altura
-        for(int j=0; j<MAPAALTO; j++){
+        for(int j=0; j < MAPAALTO; j++){
            
             //recorre ancho
-            for(int i=0; i<MAPAANCHO; i++){
+            for(int i=0; i < MAPAANCHO; i++){
             
                 //Obtiene el color de cada pixel para poder colocar cada plataforma en ese punto
                 int colorRGB = imgMapa.getColorAt(i,j).getRGB();

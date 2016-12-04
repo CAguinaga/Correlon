@@ -1,7 +1,18 @@
 #BlueJ class context
 comment0.target=Personaje
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Personaje\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Personaje\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ jugador\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120320161957\r\n
+comment1.params=mundo
+comment1.target=void\ addedToWorld(greenfoot.World)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Personaje\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ mueve()
+comment3.text=\r\n\ Metodo\ para\ realizar\ el\ movimiento\ del\ personaje.\ Realiza\ chequeos\ de\ colision\ para\ que\ el\ personaje\ pueda\ andar\ en\ plataformas\ o\ chocar\ con\ ellas\r\n
+comment4.params=
+comment4.target=void\ gravedad()
+comment4.text=\r\n\ Metodo\ que\ crea\ la\ aceleracion\ de\ caida.\ Es\ llamado\ cuando\ el\ personaje\ esta\ en\ el\ aire.\r\n
+comment5.params=nuevaX\ nuevaY
+comment5.target=void\ mueveScroll(int,\ int)
+comment5.text=\r\n\ Metodo\ que\ mueve\ al\ personaje\ en\ el\ mundo,\ el\ mundo\ hace\ scroll\ cuando\ el\ personaje\ se\ mueve\r\n
+numComments=6
