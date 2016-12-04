@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Plataformas here.
+ * Clase que crea plataformas
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Carlos Antonio Aguiñaga Camacho
+ * @version 120320161700
  */
 public class Plataforma extends Actor
 {
-    //guardan las coordenadas del bloque
+    //guardan las coordenadas y tipo del bloque
     int coordX, coordY;
     
     //constructor debe recibir coordenadas para colocar los bloques

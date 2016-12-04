@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ScrollWorld
-comment0.text=\r\n\ Clase\ que\ genera\ el\ mundo\ del\ juego\ y\ que\ guarda\ los\ metodos\ necesarios\ para\ realizar\ scrolling.\r\n\ Esta\ clase\ inicializa\ las\ variables\ necesarias\ para\ el\ efecto\ de\ scroll\ usando\ una\ clase\ donde\r\n\ existe\ un\ mapa\ ya\ dibujado\ (clase\ MundoMapa)\ y\ la\ clase\ de\ los\ bloques\ que\ conforman\ las\ plataformas.\r\n\ \r\n\ @author\:\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\ \r\n\ @version\:\ 031220161957\r\n
+comment0.text=\r\n\ Clase\ que\ genera\ el\ mundo\ del\ juego\ y\ que\ guarda\ los\ metodos\ necesarios\ para\ realizar\ scrolling.\r\n\ Esta\ clase\ inicializa\ las\ variables\ necesarias\ para\ el\ efecto\ de\ scroll\ usando\ una\ clase\ donde\r\n\ existe\ un\ mapa\ ya\ dibujado\ (clase\ MundoMapa)\ y\ la\ clase\ de\ los\ bloques\ que\ conforman\ las\ plataformas.\r\n\ \r\n\ @author\:\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\ \r\n\ @version\:\ 120420160243\r\n
 comment1.params=
 comment1.target=ScrollWorld()
 comment1.text=\r\n\ Constructor\ para\ objectos\ de\ la\ clase\ ScrollWorld.\r\n\ \r\n

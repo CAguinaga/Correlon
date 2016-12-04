@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ jugador\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120420160243\r\n
+comment1.params=cX\ cY\ iTipo
+comment1.target=Item(int,\ int,\ int)
+comment2.params=
+comment2.target=void\ cambiaTipo()
+comment2.text=\r\n\ Metodo\ que\ asigna\ una\ imagen\ al\ item\ para\ cada\ tipo.\r\n\ La\ imagen\ debe\ existir\ en\ la\ carpeta\ de\ imagenes\ del\ proyecto\r\n
+comment3.params=
+comment3.target=int\ getTipo()
+comment3.text=\r\n\ Metodo\ que\ regresa\ el\ tipo\ del\ item\ para\ generar\ el\ effecto\ deseado\r\n\ @return\ int\ tipo\r\n
+comment4.params=
+comment4.target=void\ setTomado()
+comment4.text=\r\n\ Metodo\ que\ indica\ el\ item\ como\ tomado,\ evita\ su\ reaparicion\ en\ el\ mapa\r\n\ \r\n
+numComments=5

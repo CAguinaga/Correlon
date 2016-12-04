@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Clase que crea la entidad del jugador en el mundo
  * 
  * @author Carlos Antonio Aguiñaga Camacho
- * @version 120420160021
+ * @version 120420160243
  */
 public class Personaje extends Actor
 {
@@ -25,6 +25,8 @@ public class Personaje extends Actor
     World miMundillo;
     int mundoAlto;
     int mundoAncho;
+    
+    //variable que guarda un item para usar su tipo
     
     //asigna los valores del mundo a nuestro personaje cuando se agrega al mundo
     public void addedToWorld(World mundo){
@@ -64,7 +66,7 @@ public class Personaje extends Actor
             //si se presiona espacio el personaje saltara
             if( Greenfoot.isKeyDown("space") ){
                 grav += 10;
-            }
+           }
             
             //movimiento perpetuo hacia adelante
             vel = 8;
@@ -74,6 +76,7 @@ public class Personaje extends Actor
         
         //mueve al personaje en el mundo
         mueve();
+        items();
     }
     
     /**
@@ -98,7 +101,6 @@ public class Personaje extends Actor
         
         //detecta colision. Si toca la plataforma, deja de caer. Si no es asi, continua cayendo
         if( platAb != null){
-           
             if ( grav < 0 ){
                 
                 //reinicia la gravedad y la bandera de caida
@@ -226,5 +228,39 @@ public class Personaje extends Actor
        //miMundo.scrolling(scrollX, -scrollY);
         
     }
+    
+    public void items(){
+        
+       Actor miPoder = getOneIntersectingObject(Item.class);
+       
+       Item poder;
+       
+       if( miPoder != null){
+           poder = (Item) miPoder;
+        
+           if(poder.getTipo() == 0){
+               //agrega una vida
+           }
+           if(poder.getTipo() == 1){
+               //obtener puntos y sumar
+           }
+           if(poder.getTipo() == 2){             
+               //invencible
+           }
+          
+           poder.setTomado();
+           //Greenfoot.playSound("eating.wav");
+           removeTouching( Item.class );
+       }
+    }
+    
+    /*
+    void comido()
+    {
+        CrabWorld mundo = (CrabWorld) getWorld();  // get a reference to the world
+        Counter counter = mundo.getCounter();  // get a reference to the counter
+        counter.add(1);
+    }
+    */
 
 }

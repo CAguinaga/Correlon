@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * existe un mapa ya dibujado (clase MundoMapa) y la clase de los bloques que conforman las plataformas.
  * 
  * @author: Carlos Antonio Aguiñaga Camacho 
- * @version: 031220161957
+ * @version: 120420160243
  */
 public class ScrollWorld extends World
 {
@@ -43,6 +43,7 @@ public class ScrollWorld extends World
     
     //guarda todas las plataformas aun si estan fuera de pantalla
     private List<Plataforma> listaP = new ArrayList<Plataforma>();
+    private List<Item> listaI = new ArrayList<Item>();
     
     //define la posicion de la pantalla respecto al mapa (izquierda, derecha, arriba, abajo)
     int pIzq = 0;
@@ -52,6 +53,7 @@ public class ScrollWorld extends World
     
     //Inicializa al jugador
     Personaje jugador= new Personaje();
+    
     //////////////////////////////////////////////////////////////////
     /**
      * Constructor para objectos de la clase ScrollWorld.
@@ -102,6 +104,50 @@ public class ScrollWorld extends World
                     //Guarda en la lista la plataforma creada
                     listaP.add( new Plataforma(platX, platY) );
                 }
+               
+                ////////////////////////////////////////////////////////////////////
+                
+                /*La creacion de los items en el mapa funciona exactamente igual que las
+                *plataformas, con la diferencia que se les asigna un tipo definido por color
+                *
+                **/
+                
+                //asigna tipo de item en funcion del color                
+                if( colorRGB == Color.GREEN.getRGB() ){
+        
+                    //Coordenadas en el mapa
+                    int itemX = i * BASEANCHO + BASEANCHO/2;
+                    int itemY = j * BASEALTO + BASEALTO/2;
+                    
+                    //Guarda en la lista la plataforma creada
+                    listaI.add( new Item(itemX, itemY, 1 ) );
+                    
+                }
+                
+                     if( colorRGB == Color.BLUE.getRGB() ){
+        
+                    //Coordenadas en el mapa
+                    int itemX = i * BASEANCHO + BASEANCHO/2;
+                    int itemY = j * BASEALTO + BASEALTO/2;
+                    
+                    //Guarda en la lista la plataforma creada
+                    listaI.add( new Item(itemX, itemY, 0 ) );
+                    
+                }
+                
+                 if( colorRGB == Color.YELLOW.getRGB() ){
+        
+                    //Coordenadas en el mapa
+                    int itemX = i * BASEANCHO + BASEANCHO/2;
+                    int itemY = j * BASEALTO + BASEALTO/2;
+                    
+                    //Guarda en la lista la plataforma creada
+                    listaI.add( new Item(itemX, itemY, 2 ) );
+                    
+                }
+                
+                ////////////////////////////////////////////////////////////////////
+                
             }
         }
     }
@@ -158,6 +204,62 @@ public class ScrollWorld extends World
                    }
             }
         }
+       
+      /////////////////////////////////////////////////////////////////////////
+        
+      /*La creacion de los items en la lista funciona exactamente igual que las plataformas
+      *
+      **/
+        //inicializamos un item
+       Item miItem;
+        
+        //usan la informacion de la lista
+        int miItemX, miItemY;
+        
+        //recorre la lista para generar las plataformas
+        for(int i=0; i<listaI.size(); i++){
+            
+            //guarda las plataformas y las asigna para su posterior colocacion
+            miItem = listaI.get(i);
+            
+            //obtiene las coordenadas guardadas de la lista
+            miItemX = miItem.coordX;
+            miItemY = miItem.coordY;
+            
+            //comprobamos que las coordenadas esten en pantalla comparando las coordenadas de la plataforma con las coordenadas de la pantalla
+            if( miItemX >= pIzq && 
+                miItemX <= pDer && 
+                miItemY >= pArr && 
+                miItemY <= pAb )
+            {
+                   //"mueve" los items
+                   pantallaX = miItemX - pIzq;
+                   pantallaY = miItemY - pArr;
+                  
+                  //comprueba si el item no ha sido tomado antes 
+                  if( miItem.toma == 0){
+                     //comprueba si el item existe en el mundo. Si no existe, lo genera. Si ya existe, lo "mueve". Si sale de la pantalla, lo elimina
+                     if( miItem.getWorld() == null){
+                         
+                         //crea el objeto si no existe en el mundo
+                         addObject( miItem, pantallaX, pantallaY );
+                     }
+                     else{
+                         
+                         //"mueve" el objeto si ya existe en el mundo
+                         miItem.setLocation( pantallaX, pantallaY );
+                     }
+                  }
+            }else{
+                
+                //elimina el objeto si sale de los limites de la pantalla
+                if( miItem.getWorld() != null ){
+                       removeObject( miItem );
+                   }
+            }
+        }
+        
+      /////////////////////////////////////////////////////////////////////////
     }
     
     /**
