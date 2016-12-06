@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Puntos
+comment0.text=\r\n\ Clase\ que\ guarda\ la\ puntuacion\ del\ jugador\r\n\ \r\n\ @author\:\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\ \r\n\ @version\:\ 120520160035\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ masPuntos()
+comment2.text=\r\n\ Metodo\ que\ aumenta\ la\ puntuacion\ con\ el\ tiempo\r\n
+comment3.params=operador\ porcentaje
+comment3.target=void\ operacionPC(java.lang.String,\ int)
+comment3.text=\r\n\ Metodo\ que\ realiza\ las\ operaciones\ necesarias\ con\ los\ puntos.\ Recibe\ una\ cadena\ con\r\n\ la\ operacion\ a\ realizar\ y\ un\ porcentaje\ deseado\ de\ la\ puntuacion\r\n
+numComments=4

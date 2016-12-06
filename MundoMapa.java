@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MundoMapa here.
+ * Clase que recibe una cadena y carga el archivo como imagen para su posterior uso en ScrollWorld
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author: Carlos Antonio Aguiñaga Camacho 
+ * @version: 120520160035
  */
 public class MundoMapa extends Actor
 {
@@ -12,8 +12,7 @@ public class MundoMapa extends Actor
      * Act - do whatever the MundoMapa wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    public MundoMapa(String cad){
+        setImage(cad);
+    }
 }

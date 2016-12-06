@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Personaje
-comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ jugador\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120420160243\r\n
+comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ jugador\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120520160035\r\n
 comment1.params=mundo
 comment1.target=void\ addedToWorld(greenfoot.World)
+comment10.params=
+comment10.target=void\ tiempoInvencible()
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Personaje\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
@@ -17,4 +19,14 @@ comment5.target=void\ mueveScroll(int,\ int)
 comment5.text=\r\n\ Metodo\ que\ mueve\ al\ personaje\ en\ el\ mundo,\ el\ mundo\ hace\ scroll\ cuando\ el\ personaje\ se\ mueve\r\n
 comment6.params=
 comment6.target=void\ items()
-numComments=7
+comment6.text=\r\n\ Metodo\ que\ se\ ecarga\ de\ interactuar\ con\ los\ items\ cuando\ el\ jugador\ intersecta\ con\ estos\r\n
+comment7.params=
+comment7.target=void\ golpeado()
+comment7.text=\r\n\ Metodo\ que\ detecta\ las\ colisiones\ del\ jugador\ y\ baja\ la\ salud.\ Guarda\ el\ llamado\ a\ Juego\ Terminado\r\n
+comment8.params=
+comment8.target=Puntos\ puntos()
+comment8.text=\r\n\ Metodo\ que\ obtiene\ los\ puntos\ para\ poder\ usarlos\r\n\ \r\n\ @return\ Puntos\ cont\r\n
+comment9.params=
+comment9.target=Salud\ vida()
+comment9.text=\r\n\ Metodo\ que\ obtiene\ los\ puntos\ de\ salud\ para\ poder\ usarlos\r\n\ \r\n\ @return\ Salud\ cont\r\n
+numComments=11

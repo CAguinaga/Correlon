@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Item
-comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ jugador\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120420160243\r\n
+comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ item\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120520160035\r\n
 comment1.params=cX\ cY\ iTipo
 comment1.target=Item(int,\ int,\ int)
 comment2.params=

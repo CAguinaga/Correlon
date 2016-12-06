@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Enemigo
+comment0.text=\r\n\ Clase\ que\ crea\ la\ entidad\ del\ enemigo\ en\ el\ mundo\r\n\ \r\n\ @author\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\r\n\ @version\ 120520160035\r\n
+comment1.params=iX\ iY\ nTipo
+comment1.target=Enemigo(int,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ enemigo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ getCoord()
+comment3.text=\r\n\ Metodo\ para\ obtener\ las\ coordenadas\ de\ un\ enemigo,\ si\ se\ necesitan\r\n
+comment4.params=
+comment4.target=void\ cambiaTipo()
+comment4.text=\r\n\ Metodo\ que\ asigna\ la\ imagen\ del\ enemigo\ dependiendo\ de\ su\ tipo\r\n
+numComments=5

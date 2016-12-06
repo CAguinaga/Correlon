@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Salud
+comment0.text=\r\n\ Clase\ que\ guarda\ la\ salud\ del\ jugador\r\n\ \r\n\ @author\:\ Carlos\ Antonio\ Agui\u00F1aga\ Camacho\ \r\n\ @version\:\ 120520160035\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=operador
+comment2.target=void\ operacionSal(java.lang.String)
+comment2.text=\r\n\ Metodo\ que\ realiza\ las\ operaciones\ con\ la\ salud\r\n
+comment3.params=
+comment3.target=int\ getPuntosSalud()
+comment3.text=\r\n\ Metodo\ que\ envia\ el\ valor\ de\ la\ salud\r\n\ \r\n\ @return\ int\ salud\r\n
+numComments=4

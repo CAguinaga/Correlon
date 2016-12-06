@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Clase que crea la entidad del jugador en el mundo
+ * Clase que crea la entidad del item en el mundo
  * 
  * @author Carlos Antonio Aguiñaga Camacho
- * @version 120420160243
+ * @version 120520160035
  */
 public class Item extends Actor
 {
@@ -37,15 +37,15 @@ public class Item extends Actor
         
         //asigna imagen por tipo
         if ( tipo == 0 ){
-           cad = "board1.jpg";
+           cad = "item1.png";
            //setImage(img);
         }
         else if ( tipo == 1 ){
-            cad = "board2.jpg";
+            cad = "item2.png";
            //setImage(img);
         }
         else if ( tipo == 2 ){
-           cad = "board3.jpg";
+           cad = "item3.png";
            //setImage(img);
         }
         
